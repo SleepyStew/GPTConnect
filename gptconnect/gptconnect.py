@@ -3,7 +3,7 @@ from typing import Union
 import openai
 import copy
 
-valid_models = ["gpt-3.5-turbo-0613", "gpt-4-32k-0613"]
+valid_models = ["gpt-3.5-turbo-0613", "gpt-4-0613", "gpt-4-32k-0613"]
 functions = []
 
 
