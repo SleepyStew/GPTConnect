@@ -8,5 +8,8 @@ GPTConnect is a Python package that simplifies the use of the new functions feat
 - Function groups system that allow easy integration of multiple commands at a time
 - More feautures coming soon! This package is only in early stages of development.
 
+## Install
+`pip install GPTConnect`
+
 ## Demo
 [demo.py](https://github.com/SleepyStew/gptconnect/blob/master/demo.py)
