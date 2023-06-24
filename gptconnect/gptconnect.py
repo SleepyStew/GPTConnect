@@ -36,7 +36,7 @@ class GPTConnect:
         :param prompt: The prompt to provide
         :param function_group: The function group to use
         :param messages: The messages to provide as context
-        :return: A dictionary containing the function if called and the response choices from OpenAI
+        :return: A dictionary containing the function if called, and the content of the response from OpenAI
         """
         if not prompt and not messages:
             raise ValueError("Prompt or messages must be provided")
