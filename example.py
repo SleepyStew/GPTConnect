@@ -1,12 +1,21 @@
 import os
 
-from gptconnect import GPTConnect, GPTFunction
+from gptconnect import GPTConnect, GPTFunction, GPTFunctionHandler
 import requests
 import dotenv
 
 dotenv.load_dotenv()
 
 ai = GPTConnect(token=os.environ.get("TOKEN"), model="gpt-3.5-turbo-0613")
+
+
+@GPTFunctionHandler()
+def custom_function_handler(function, args):
+    # Please make sure to update or remove this code when adding new functions
+    if function.__name__ == "ping_hostname":
+        return function(args)
+    else:
+        return "The function called is invalid. Please let the user know this operation failed."
 
 
 @GPTFunction(
@@ -23,7 +32,7 @@ ai = GPTConnect(token=os.environ.get("TOKEN"), model="gpt-3.5-turbo-0613")
         "required": ["hostname"],
     },
 )
-def ping_hostname(args: dict) -> str:
+def ping_hostname(args):
     print(f"Pinging hostname {args.get('hostname')}...")
     url = f"https://{args.get('hostname')}"
     try:
@@ -33,7 +42,7 @@ def ping_hostname(args: dict) -> str:
         return f"The hostname {args.get('hostname')} could not be pinged."
 
 
-print(ai.call(prompt="Ping the hostname github.com", function_group="general_commands"))
+print(ai.call(prompt="Ping the hostname github", function_group="general_commands"))
 
 # Output:
 # Pinging hostname github.com...
