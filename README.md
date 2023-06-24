@@ -1,6 +1,6 @@
 # GPTConnect
 
-GPTConnect is a Python 🐍 package that simplifies the use of the new functions feature of ChatGPT by OpenAI. It provides an easy-to-use framework for creating, defining and interacting with GPT functions, making your development process smoother and more efficient.
+GPTConnect is a Python 🐍 package that simplifies the use of the new functions feature of ChatGPT by OpenAI. It provides an easy-to-use framework for creating and interacting with GPT functions, making your development process smoother and more efficient.
 
 Make sure to star this project if you find it useful! ✨
 
