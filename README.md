@@ -12,4 +12,4 @@ GPTConnect is a Python package that simplifies the use of the new functions feat
 `pip install GPTConnect`
 
 ## Demo
-[demo.py](https://github.com/SleepyStew/gptconnect/blob/master/demo.py)
+[demo.py](https://github.com/SleepyStew/gptconnect/blob/master/example.py)
