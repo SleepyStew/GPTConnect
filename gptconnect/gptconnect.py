@@ -55,7 +55,7 @@ class GPTConnect:
             call = function(context)
 
             messages.append(
-                {"role": "function", "name": function_call.name, "content": call}
+                {"role": "function", "name": function_call.name, "content": str(call)}
             )
 
             response = openai.ChatCompletion.create(
