@@ -9,7 +9,7 @@ If you have any ideas, bug reports or suggestions feel free to open an issue or 
 ## Features
 
 - 🎉 Simplified and intuitive decorator based system to define GPT functions.
-- 🔤 Function groups system that allow easy integration of multiple commands at a time
+- 🔤 Function groups system that allows for easy integration of multiple commands.
 - 🕐 More features coming soon! This package is only in early stages of development.
 
 ## Install
