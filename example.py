@@ -26,8 +26,11 @@ ai = GPTConnect(token=os.environ.get("TOKEN"), model="gpt-3.5-turbo-0613")
 def ping_hostname(args: dict) -> str:
     print(f"Pinging hostname {args.get('hostname')}...")
     url = f"https://{args.get('hostname')}"
-    response = requests.get(url)
-    return f"Response code: {response.status_code}"
+    try:
+        response = requests.get(url)
+        return f"Ping was successful. Response code was {response.status_code}."
+    except requests.exceptions.ConnectionError:
+        return f"The hostname {args.get('hostname')} could not be pinged."
 
 
 print(ai.call(prompt="Ping the hostname github.com", function_group="general_commands"))
