@@ -9,5 +9,5 @@ setuptools.setup(
     packages=["gptconnect"],
     install_requires=["openai"],
     url="https://github.com/SleepyStew/gptconnect",
-    long_description=open("README.md").read(),
+    long_description=open("README.md", encoding="utf-8").read(),
 )

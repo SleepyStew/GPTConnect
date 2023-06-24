@@ -10,7 +10,7 @@ If you have any ideas, bug reports or suggestions feel free to open an issue or 
 
 - 🎉 Simplified and intuitive decorator based system to define GPT functions.
 - 🔤 Function groups system that allow easy integration of multiple commands at a time
-- 🕐 More feautures coming soon! This package is only in early stages of development.
+- 🕐 More features coming soon! This package is only in early stages of development.
 
 ## Install
 `pip install GPTConnect`
