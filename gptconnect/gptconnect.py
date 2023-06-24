@@ -3,6 +3,7 @@ from typing import Union
 import openai
 import copy
 
+
 valid_models = ["gpt-3.5-turbo-0613", "gpt-4-0613", "gpt-4-32k-0613"]
 functions = []
 
@@ -67,7 +68,12 @@ class GPTConnect:
             ][0]
             context = json.loads(function_call.arguments)
 
-            call = function(context)
+            from .gptfunctionhandler import function_handler
+
+            if function_handler:
+                call = function_handler(function, context)
+            else:
+                call = function(context)
 
             messages.append(
                 {"role": "function", "name": function_call.name, "content": str(call)}
