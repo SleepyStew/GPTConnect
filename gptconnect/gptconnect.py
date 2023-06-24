@@ -8,6 +8,13 @@ functions = []
 
 
 class GPTConnect:
+    """
+    The main class for working with GPTConnect
+
+    :param token: The OpenAI API token
+    :param model: The model to use
+    """
+
     def __init__(self, token: str, model: str):
         openai.api_key = token
         if model not in valid_models:
@@ -23,6 +30,14 @@ class GPTConnect:
         function_group: str,
         messages: Union[dict, None] = None,
     ) -> dict:
+        """
+        Make a ChatGPT Completion with a prompt or list of messages, and function group
+
+        :param prompt: The prompt to provide
+        :param function_group: The function group to use
+        :param messages: The messages to provide as context
+        :return: A dictionary containing the function if called and the response choices from OpenAI
+        """
         if not prompt and not messages:
             raise ValueError("Prompt or messages must be provided")
 
