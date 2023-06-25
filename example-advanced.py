@@ -1,8 +1,11 @@
+# More will be added to this example soon
+
 import os
 
 from gptconnect import GPTConnect, GPTFunction, GPTFunctionHandler
 import requests
 import dotenv
+
 
 dotenv.load_dotenv()
 
