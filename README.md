@@ -6,13 +6,13 @@ Make sure to star this project if you find it useful! ✨
 
 If you have any ideas, bug reports or suggestions feel free to open an issue or contact me on discord at @**sleepystew**
 
-## Features
+## 🔧 Features
 
 - 🎉 Simplified and intuitive decorator based system to define GPT functions.
 - 🔤 Function groups system that allows for easy integration of multiple commands.
 - 🕐 More features coming soon! This package is only in early stages of development.
 
-## Install
+## 🚀 Install
 `pip install GPTConnect`
 
 ## Example Usage
