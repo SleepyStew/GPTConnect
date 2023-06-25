@@ -17,4 +17,5 @@ If you have any ideas, bug reports or suggestions feel free to open an issue or 
 
 ## Example Usage
 [example-simple.py](https://github.com/SleepyStew/gptconnect/blob/master/example-simple.py)
+
 [example-advanced.py](https://github.com/SleepyStew/gptconnect/blob/master/example-advanced.py)
