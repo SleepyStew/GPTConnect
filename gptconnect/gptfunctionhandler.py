@@ -1,9 +1,7 @@
 function_handler = None
 
 
-def GPTFunctionHandler(
-    group: str = None, description: str = None, params: dict = None
-) -> callable:
+def GPTFunctionHandler() -> callable:
     """
     Decorator for setting the custom function handler
     """
