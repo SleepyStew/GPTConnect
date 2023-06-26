@@ -3,7 +3,7 @@ from .dataclasses import Params
 
 
 def GPTFunction(
-    group: str = None, description: str = None, params: Params = None
+    group: str = "default", description: str = "", params: Params = None
 ) -> callable:
     """
     Decorator for creating a GPT function
