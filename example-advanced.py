@@ -1,11 +1,9 @@
-# More will be added to this example soon
-
+import datetime
 import os
 
 from gptconnect import GPTConnect, GPTFunction, GPTFunctionHandler
 import requests
 import dotenv
-
 
 dotenv.load_dotenv()
 
@@ -15,7 +13,7 @@ ai = GPTConnect(token=os.environ.get("TOKEN"), model="gpt-3.5-turbo-0613")
 @GPTFunctionHandler()
 def custom_function_handler(function, args):
     # Please make sure to update or remove this code when adding new functions
-    if function.__name__ == "ping_hostname":
+    if function.__name__ in ["ping_hostname", "get_time"]:
         return function(args)
     else:
         return "The function called is invalid. Please let the user know this operation failed."
@@ -45,6 +43,20 @@ def ping_hostname(args):
         return f"The hostname {args.get('hostname')} could not be pinged."
 
 
+@GPTFunction(
+    group="general_commands",
+    description="Get the current time",
+    params={
+        "type": "object",
+        "properties": {},
+        "required": [],
+    },
+)
+def get_time(args):
+    formatted_time = datetime.datetime.now().strftime("%H:%M")
+    return formatted_time
+
+
 print(ai.call(prompt="Ping the hostname github", function_group="general_commands"))
 
 # Output:
@@ -53,3 +65,9 @@ print(ai.call(prompt="Ping the hostname github", function_group="general_command
 #     'content': 'The hostname "github.com" was successfully pinged with a response code of 200.',
 #     'function_called': 'ping_hostname'
 # }
+
+
+print(ai.call(prompt="What's the time?", function_group="general_commands"))
+
+# Output:
+# {'content': 'The current time is 13:18.', 'function_called': 'get_time'}
