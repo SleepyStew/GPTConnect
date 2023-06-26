@@ -3,7 +3,7 @@ import setuptools
 
 setuptools.setup(
     name="GPTConnect",
-    version="0.2.3",
+    version="0.2.4",
     author="SleepyStew",
     description="A python package to make GPT functions easy",
     packages=["gptconnect"],
