@@ -10,7 +10,7 @@ def GPTFunction(
 
     :param group: The group of the function
     :param description: The description of the function
-    :param params: The parameters of the function, in OpenAI's standard JSON format
+    :param params: The parameters of the function, as a Params object
     """
 
     def decorator(function):
