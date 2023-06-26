@@ -22,3 +22,8 @@ If you have any ideas, bug reports or suggestions feel free to open an issue or 
 [example-simple.py](https://github.com/SleepyStew/gptconnect/blob/master/example-simple.py)
 
 [example-advanced.py](https://github.com/SleepyStew/gptconnect/blob/master/example-advanced.py)
+
+## Docs
+The majority of documentation is embedded within the package through things like type hints, if this package gains more traction I may create a separate website for docs.
+
+[OpenAI's Function calling docs](https://platform.openai.com/docs/guides/gpt/function-calling)
