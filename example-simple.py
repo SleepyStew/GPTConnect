@@ -1,23 +1,18 @@
-from gptconnect import GPTConnect, GPTFunction
 import requests
 
+from gptconnect import GPTConnect, GPTFunction, Params, Property
 
-ai = GPTConnect("TOKEN HERE", model="gpt-3.5-turbo-0613")
+
+ai = GPTConnect(token="TOKEN HERE", model="gpt-3.5-turbo-0613")
 
 
 @GPTFunction(
     group="general_commands",
     description="Ping a hostname",
-    params={
-        "type": "object",
-        "properties": {
-            "hostname": {
-                "type": "string",
-                "description": "The hostname to ping",
-            },
-        },
-        "required": ["hostname"],
-    },
+    params=Params(
+        properties={"hostname": Property(str, "The hostname to ping")},
+        required=["hostname"],
+    ),
 )
 def ping_hostname(args):
     print(f"Pinging hostname {args.get('hostname')}...")

@@ -1,8 +1,9 @@
 from gptconnect import functions
+from .dataclasses import Params
 
 
 def GPTFunction(
-    group: str = None, description: str = None, params: dict = None
+    group: str = None, description: str = None, params: Params = None
 ) -> callable:
     """
     Decorator for creating a GPT function
@@ -16,13 +17,20 @@ def GPTFunction(
         def wrapper(*args, **kwargs):
             return function(*args, **kwargs)
 
+        params_ = {
+            "type": "object",
+            "properties": params.properties_dict(),
+            "required": params.required,
+        }
+
         details = {
             "function": function,
             "group": group,
             "name": function.__name__,
             "description": description,
-            "parameters": params,
+            "parameters": params_,
         }
+
         functions.append(details)
 
         return wrapper

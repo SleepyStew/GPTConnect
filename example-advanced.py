@@ -1,9 +1,10 @@
 import datetime
 import os
 
-from gptconnect import GPTConnect, GPTFunction, GPTFunctionHandler
-import requests
 import dotenv
+import requests
+
+from gptconnect import GPTConnect, GPTFunction, GPTFunctionHandler, Params, Property
 
 dotenv.load_dotenv()
 
@@ -22,16 +23,10 @@ def custom_function_handler(function, args):
 @GPTFunction(
     group="general_commands",
     description="Ping a hostname",
-    params={
-        "type": "object",
-        "properties": {
-            "hostname": {
-                "type": "string",
-                "description": "The hostname to ping",
-            },
-        },
-        "required": ["hostname"],
-    },
+    params=Params(
+        properties={"hostname": Property(str, "The hostname to ping")},
+        required=["hostname"],
+    ),
 )
 def ping_hostname(args):
     print(f"Pinging hostname {args.get('hostname')}...")
@@ -46,11 +41,10 @@ def ping_hostname(args):
 @GPTFunction(
     group="general_commands",
     description="Get the current time",
-    params={
-        "type": "object",
-        "properties": {},
-        "required": [],
-    },
+    params=Params(
+        properties={},
+        required=[],
+    ),
 )
 def get_time(args):
     formatted_time = datetime.datetime.now().strftime("%H:%M")
