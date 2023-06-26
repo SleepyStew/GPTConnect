@@ -18,10 +18,6 @@ class Property:
     description: str
     enum: list = None
 
-    def __post_init__(self):
-        if not self.enum:
-            self.enum = []
-
 
 @dataclass
 class Params:
@@ -33,5 +29,8 @@ class Params:
         for key, value in self.properties.items():
             _properties[key] = value.__dict__
             _properties[key]["type"] = types_lookup[_properties[key]["type"]]
+            if not _properties[key].get("enum"):
+                del _properties[key]["enum"]
+
         return _properties
 
