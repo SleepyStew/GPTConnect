@@ -1,5 +1,8 @@
 # GPTConnect
 
+![PyPI - Downloads](https://img.shields.io/pypi/dd/gptconnect?color=success)
+![PyPI](https://img.shields.io/pypi/v/gptconnect?label=version&color=blue)
+
 GPTConnect is a Python 🐍 package that simplifies the use of the new functions feature of ChatGPT by OpenAI. It provides an easy-to-use framework for creating and interacting with GPT functions, making your development process smoother and more efficient.
 
 Make sure to star this project if you find it useful! ✨
