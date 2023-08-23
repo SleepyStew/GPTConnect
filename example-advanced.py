@@ -23,10 +23,24 @@ def custom_function_handler(function, args):
 @GPTFunction(
     group="general_commands",
     description="Ping a hostname",
+
     params=Params(
         properties={"hostname": Property(str, "The hostname to ping")},
         required=["hostname"],
     ),
+
+    # You can also use the standard OpenAI params dictionary format, like this:
+    # params={
+    #     "type": "object",
+    #     "properties": {
+    #         "hostname": {
+    #             "type": "string",
+    #             "description": "The hostname to ping",
+    #         },
+    #     },
+    #     "required": ["hostname"],
+    # },
+
 )
 def ping_hostname(args):
     print(f"Pinging hostname {args.get('hostname')}...")
