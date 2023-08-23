@@ -33,4 +33,3 @@ class Params:
                 del _properties[key]["enum"]
 
         return _properties
-
